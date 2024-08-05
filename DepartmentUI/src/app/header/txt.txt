@@ -1,0 +1,25 @@
+ <div class="college_header">
+      <div style="width: 30%;" class="container-fluid">
+        <a class="navbar-brand" routerLink="">
+          <img src="../assets/logo.png" alt="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <div  class="main_header">
+        <!-- Added closing div tag for .container-fluid -->
+        <div  class="college-name">
+          <h1>
+            Institute of Engineering & Technology, Ayodhya
+          </h1>
+          <h2>
+            अभियांत्रिकी एवं प्रौद्योगिकी संस्थान, अयोध्या
+          </h2>
+          <h4>
+            An Autonomous Constituent Institute of Dr. Ram Manohar Lohia Avadh University Uttar Pradesh, Ayodhya
+          </h4>
+        </div>
+      </div> 
+    </div>

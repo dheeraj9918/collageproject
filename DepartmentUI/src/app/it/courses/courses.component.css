@@ -1,0 +1,54 @@
+.mechanical{
+  padding-top: 8vh;
+  margin: 0 7vh 7vh;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.allAbout{
+  margin-top: 7vh;
+}
+
+.parrent{
+  display: flex;
+  gap: 25px;
+}
+
+.gif{
+  width: 30px;
+  margin-right: 2vh;
+}
+
+.btun{
+  background-color: #f0a65b;
+  color: #edf2f4;
+}
+.header1{
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+.containt{
+  margin-top: 4vh;
+  margin-right: 8vh;
+  margin-left: 2vh;
+  height: 100%;
+  width: 100%;
+  margin-bottom: 20vh;
+}
+
+p{
+  margin-top: 8vh;
+  margin-bottom: 5vh;
+  text-align: justify !important;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+@media (max-width: 480px) {
+ .parrent{
+  flex-wrap: wrap;
+ }
+ p{
+  margin-top: 1vh;
+ }
+}

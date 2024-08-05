@@ -1,0 +1,211 @@
+.mechanical{
+  padding-top: 8vh;
+  margin: 0 7vh 7vh;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.allAbout{
+  margin-top: 7vh;
+}
+
+.parrent{
+  display: flex;
+  gap: 25px;
+}
+
+.gif{
+  width: 30px;
+  margin-right: 2vh;
+}
+
+.btun{
+  background-color: #f0a65b;
+  color: #edf2f4;
+}
+.header1{
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+.containt{
+  margin-top: 4vh;
+  margin-right: 8vh;
+  margin-left: 2vh;
+  height: 100%;
+  width: 100%;
+  margin-bottom: 20vh;
+}
+
+p{
+  margin-top: 8vh;
+  margin-bottom: 5vh;
+  text-align: justify !important;
+  font-size: 14px;
+  line-height: 24px;
+}
+/* infra */
+.main2{
+  margin-top: 3rem;
+}
+.infrastructure{
+  height: auto;
+  margin: 10vh 5vh;
+  background-color: #333333;
+  box-shadow: 5px 5px 10px rgba(198, 92, 92, 0.3);
+  border-radius: 2vh;
+  width: 48rem;
+}
+
+.infrastructure h2{
+  font-weight: 600;
+  color: #edf2f4;
+  text-align: center;
+  padding-top: 3vh;
+}
+
+.main2{
+  display: flex;
+}
+
+.texts{
+  width: 30%;
+  background: #333333;
+  color: white;
+  padding: 0 3vh;
+}
+
+
+.texts h6{
+  padding-top: 8vh;
+    font-size: small;
+    line-height: 6vh;
+}
+.images img{
+  border-radius: 4vh;
+  width: 23rem;
+}
+
+.textsLab{
+  width: 350vh;
+  background: #333333;
+  color: white;
+  padding: 0 3vh;
+}
+
+.textsLab h6{
+  padding-top: 8vh;
+    font-size: small;
+    line-height: 6vh;
+}
+hr{
+  color: #edf2f4;
+}
+
+.Classrooms img{
+  margin-left: 11rem;
+}
+
+
+@media (max-width: 1200px) {
+  .it {
+    padding-top: 20vh;
+    margin: 0 5vh 5vh;
+  }
+
+  .containt {
+    margin-right: 4vh;
+    margin-left: 1vh;
+    margin-bottom: 10vh;
+  }
+
+  .infrastructure {
+    margin: 5vh 2vh;
+    width: 100%;
+  }
+
+  .texts, .textsLab {
+    padding: 0 2vh;
+  }
+
+  .images img {
+    width: 100%;
+    max-width: 20rem;
+  }
+
+  .Classrooms img {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 20rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .it {
+    padding-top: 15vh;
+    margin: 0 3vh 3vh;
+  }
+
+  .containt {
+    margin-right: 2vh;
+    margin-left: 1vh;
+    margin-bottom: 5vh;
+  }
+
+  .infrastructure {
+    margin: 5vh 1vh;
+    width: calc(100% - 2vh);
+  }
+
+  .texts, .textsLab {
+    padding: 0 1vh;
+  }
+
+  .images img {
+    max-width: 18rem;
+  }
+
+  .Classrooms img {
+    max-width: 18rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .parrent{
+    flex-wrap: wrap;
+    margin-bottom: 2px;
+  }
+  .main2{
+    flex-wrap: wrap;
+  }
+  .it {
+    padding-top: 10vh;
+    margin: 0 2vh 2vh;
+  }
+
+  .containt {
+    margin-right: 1vh;
+    margin-left: 0.5vh;
+    margin-bottom: 2vh;
+  }
+
+  .infrastructure {
+    margin: 3vh 1vh;
+    width: calc(100% - 1vh);
+  }
+
+  .texts, .textsLab {
+    padding: 0 0.5vh;
+  }
+
+  .images img {
+    max-width: 15rem;
+  }
+
+  .Classrooms img {
+    max-width: 15rem;
+  }
+  .texts{
+    width: 77%;
+  }
+}

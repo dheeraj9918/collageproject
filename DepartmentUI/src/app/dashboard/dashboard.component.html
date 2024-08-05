@@ -1,0 +1,515 @@
+<div >
+  <app-header></app-header>
+  <div class="tab" *ngIf="loginUser.role == 'Admin'">
+    <div class="buttons">
+      <div>
+
+        <div>
+          <img src="./assets/arrow.gif" class="gif" alt="">
+          <button class="btn btun" (click)="notice()">Manage Notice Board</button>
+        </div>
+        <div>
+          <img src="./assets/arrow.gif" class="gif" alt="">
+          <button class="btn btun" (click)="registration()">Register New Student</button>
+        </div>
+        <div>
+          <img src="./assets/arrow.gif" class="gif" alt="">
+          <button class="btn btun" (click)="result()">Upload Semster Results</button>
+        </div>
+        <br>
+        <div>
+          <!-- <img src="./assets/arrow.gif" class="gif" alt="">
+          <button (click)="downloadPDF()" class="btn btun">Download Student List</button> -->
+          <!-- HTML -->
+      <form (ngSubmit)="generatePDF()">
+       <label>
+     <input type="checkbox" [(ngModel)]="selectedColumns.id" name="id"> ID
+    </label>
+    <label>
+    <input type="checkbox" [(ngModel)]="selectedColumns.name" name="name"> Name
+    </label>
+    <label>
+    <input type="checkbox" [(ngModel)]="selectedColumns.email" name="email"> Email
+    </label>
+    <label>
+      <input type="checkbox" [(ngModel)]="selectedColumns.gender" name="email"> Gender
+      </label>
+      <label>
+        <input type="checkbox" [(ngModel)]="selectedColumns.dob" name="email"> DOB
+        </label>
+  <!-- Add more checkboxes as needed -->
+
+  <button type="submit" class="btn btn-primary">Download PDF</button>
+</form>
+
+        </div>
+      </div>
+     <div>
+    <button class="btn btn-danger" (click)="signOut()">Logout</button>
+     </div>
+    </div>
+
+
+
+
+    <h1>All Student Data</h1>
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Roll No</th>
+            <th scope="col">Name</th>
+            <th scope="col">Gender</th>
+            <th scope="col">DOB</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone No</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let std of allStudents | paginate: { itemsPerPage: 5, currentPage: p}">
+            <th>{{std.id}}</th>
+            <td>{{std.fullName}}</td>
+            <td>{{std.gender}}</td>
+            <td>{{std.dob | date}}</td>
+            <td>{{std.email}}</td>
+            <td>{{std.phoneNumber}}</td>
+
+          <td><button class="btn btn-primary" (click)="details(std)">Details</button></td>
+          <td><!-- Button trigger modal -->
+            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="edit(std.id)">
+              Edit
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form #myForm="ngForm" (ngSubmit)="onSubmit()">
+                      <section class="h-100 ">
+                        <div class="container py-5 h-100">
+                          <div class="row d-flex justify-content-center align-items-center h-100">
+                            <div class="col">
+                              <div class="card card-registration my-4">
+                                <div class="row g-0">
+
+                                  <div class="col-xl-6 main">
+                                    <div class="card-body p-md-5 text-black">
+                                      <h3 class="mb-5 text-uppercase">Student registration form</h3>
+
+                                      <div class="row">
+                                        <div class="col-md-6 mb-4">
+                                          <div class="form-outline" >
+                                            <label class="form-label" for="form3Example1m">Roll Number</label>
+                                            <input type="text" id="form3Example1m" class="form-control form-control-lg" required name="rollNo"
+                                            [(ngModel)]="formData.rollNo" #rollNo="ngModel" [ngClass]="{'invalid-border': rollNo.invalid && (rollNo.dirty || rollNo.touched)}"/>
+                                            <div class="text-danger" *ngIf="rollNo.invalid && (rollNo.dirty || rollNo.touched)">*RollNo Required</div>
+                                          </div>
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                          <div class="form-outline" >
+                                            <label class="form-label" for="form3Example1m">Full Name</label>
+                                            <input type="text" id="form3Example1m" class="form-control form-control-lg" required name="firstName"
+                                            [(ngModel)]="formData.fullName" #fullName="ngModel" [ngClass]="{'invalid-border': fullName.invalid && (fullName.dirty || fullName.touched)}"/>
+                                            <div class="text-danger" *ngIf="fullName.invalid && (fullName.dirty || fullName.touched)">*Full Name Required</div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <!-- <div class="row">
+                                        <div class="col-md-6 mb-4">
+                                          <div class="form-outline">
+                                            <label class="form-label" for="form3Example1n1">Father's name</label>
+                                            <input type="text" id="form3Example1n1" class="form-control form-control-lg"
+                                             name="FatherName" required [(ngModel)]="formData.FatherName" #FatherName = "ngModel"
+                                              [ngClass]="{'invalid-border': FatherName.invalid && (FatherName.dirty || FatherName.touched)}"/>
+                                              <div class="text-danger" *ngIf="FatherName.invalid && (FatherName.dirty || FatherName.touched)">*Father's name Required</div>
+
+                                          </div>
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                          <div class="form-outline">
+                                            <label class="form-label" for="form3Example1n1">Upload Image </label>
+                                            <input type="text" id="form3Example1n1" class="form-control form-control-lg"
+                                             name="FileName" required [(ngModel)]="formData.FileName" #FileName = "ngModel"
+                                              [ngClass]="{'invalid-border': FileName.invalid && (FileName.dirty || FileName.touched)}"/>
+                                              <div class="text-danger" *ngIf="FileName.invalid && (FileName.dirty || FileName.touched)">*Father's name Required</div>
+                                          </div>
+                                        </div>
+                                      </div> -->
+                                      <!-- <div class="row">
+                                        <div class="col-md-6 mb-4">
+                                          <div class="form-outline">
+                                            <input type="text" id="form3Example1m1" class="form-control form-control-lg"
+                                             name="AdmissionFee" required [(ngModel)]="formData.AdmissionFee" #AdmissionFee = "ngModel"
+                                              [ngClass]="{'invalid-border': AdmissionFee.invalid && (AdmissionFee.dirty || AdmissionFee.touched)}" />
+                                              <div class="text-danger" *ngIf="AdmissionFee.invalid && (AdmissionFee.dirty || AdmissionFee.touched)">*Admission Fee Required</div>
+                                            <label class="form-label" for="form3Example1m1">Admission Fee</label>
+                                          </div>
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                          <div class="form-outline">
+                                            <input type="text" id="form3Example1n1" class="form-control form-control-lg"
+                                             name="ExamForm" required [(ngModel)]="formData.ExamForm" #ExamForm = "ngModel"
+                                              [ngClass]="{'invalid-border': ExamForm.invalid && (ExamForm.dirty || ExamForm.touched)}"/>
+                                              <div class="text-danger" *ngIf="ExamForm.invalid && (ExamForm.dirty || ExamForm.touched)">*Exam Form Required</div>
+                                            <label class="form-label" for="form3Example1n1">Exam Form</label>
+                                          </div>
+                                        </div>
+                                      </div> -->
+
+
+                                      <div class="d-md-flex justify-content-start align-items-center mb-4 py-2" >
+
+                                        <h6 class="mb-0 me-4">Gender: </h6>
+
+                                        <div class="form-check form-check-inline mb-0 me-4">
+                                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="femaleGender"
+                                            value="female"  [(ngModel)]="formData.gender"/>
+                                          <label class="form-check-label" for="femaleGender">Female</label>
+                                        </div>
+
+                                        <div class="form-check form-check-inline mb-0 me-4">
+                                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="maleGender"
+                                            value="male"  [(ngModel)]="formData.gender" />
+                                          <label class="form-check-label" for="maleGender">Male</label>
+                                        </div>
+
+                                        <div class="form-check form-check-inline mb-0">
+                                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="otherGender"
+                                            value="other"  [(ngModel)]="formData.gender" />
+                                          <label class="form-check-label" for="otherGender">Other</label>
+                                        </div>
+
+                                      </div>
+
+                                      <div class="row">
+
+                                        <!-- <div class="col-md-6 mb-4">
+                                          <label for="lang">Category</label>
+                                          <select class="select" name="category"
+                                          required #category="ngModel" [ngClass]="{'invalid-border': category.invalid && (category.dirty || category.touched)}"
+                                          [(ngModel)]="formData.category">
+                                            <option value="General">General</option>
+                                            <option value="EWS">EWS</option>
+                                            <option value="OBC">OBC</option>
+                                            <option value="SC">SC</option>
+                                            <option value="ST">ST</option>
+                                          </select>
+
+                                        </div> -->
+                                        <!-- <div class="col-md-6 mb-4">
+                                          <label for="lang">Religion</label>
+                                          <select class="select" name="religion"
+                                          required #religion="ngModel" [ngClass]="{'invalid-border': religion.invalid && (religion.dirty || religion.touched)}"
+                                          [(ngModel)]="formData.religion">
+                                            <option value="Hinduism">Hinduism</option>
+                                            <option value="Islam">Islam</option>
+                                            <option value="Christianity">Christianity</option>
+                                            <option value="Sikhism">Sikhism</option>
+                                            <option value="Buddhism">Buddhism</option>
+                                            <option value="Other">Other</option>
+                                          </select>
+
+                                        </div> -->
+                                        <div  class="col-md-6 mb-4">
+                                          <label for="lang">DOB</label>
+                                          <input type="date" id="dob" name="dob"
+                                          [(ngModel)]="formData.dob"
+                                          required #dob="ngModel" [ngClass]="{'invalid-border': dob.invalid && (dob.dirty || dob.touched)}"
+                                          />
+                                        </div>
+
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-md-6 mb-4">
+                                          <div class="form-outline">
+                                            <label class="form-label" for="form3Example97">Email ID</label>
+                                            <input type="text" id="form3Example97" required #email="ngModel" [ngClass]="{'invalid-border': email.invalid && (email.dirty || email.touched)}"
+                                            class="form-control form-control-lg" name="email" [(ngModel)]="formData.email"/>
+                                            <div class="text-danger" *ngIf="email.invalid && (email.dirty || email.touched)">*Email id Required</div>
+
+                                          </div>
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                          <div class="form-outline">
+                                            <label class="form-label" for="form3Example97">Phone No.</label>
+                                            <input type="text" id="form3Example97" required #phoneNumber="ngModel" [ngClass]="{'invalid-border': phoneNumber.invalid && (phoneNumber.dirty || phoneNumber.touched)}"
+                                            class="form-control form-control-lg" name="phoneNumber" [(ngModel)]="formData.phoneNumber"/>
+                                            <div class="text-danger" *ngIf="phoneNumber.invalid && (phoneNumber.dirty || phoneNumber.touched)">*Phone No. Required</div>
+
+                                          </div>
+                                        </div>
+                                      </div>
+
+
+
+                                      <div class="d-flex justify-content-end pt-3">
+                                        <button type="button" class="btn btn-light btn-lg" (click)="reset()">Reset all</button>
+                                        <button type="submit" class="btn btn-warning btn-lg ms-2" >Submit form</button>
+                                      </div>
+
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                      </form>
+                  </div>
+                </div>
+              </div>
+            </div></td>
+        </tr>
+       <div class="page"><pagination-controls (pageChange)="p = $event"></pagination-controls></div>
+      </tbody>
+    </table>
+
+  </div>
+
+
+</div>
+  <div class="parrent"  *ngIf="loginUser.role == 'User'">
+    <div class="main">
+      <div class="logo"><img src="../assets/logo.png" alt=""></div>
+      <hr>
+      <h6>{{loginUser.fullName}}</h6>
+      <hr>
+      <ul>
+        <li><span class="fa-solid fa-house"></span><a href="">Dash Board</a></li>
+        <li><span class="fa-solid fa-user"></span><a href="">My Profile</a></li>
+        <li><span class="fa-solid fa-book"></span><a href="payment">Admission Fee</a></li>
+        <li><span class="fa-solid fa-book"></span><a href="">Exam Form</a></li>
+        <li><span class="fa-solid fa-hotel"></span><a href="">Hostel</a></li>
+        <li><span class="fa-solid fa-right-to-bracket"></span><button class="" (click)="signOut()">Logout</button></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>My Profile</h3>
+
+      <div class="card" style="width: 18rem;">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" class="card-img-top" alt="...">
+        <hr>
+        <div class="card-body">
+          <h5 class="card-title">{{loginUser.fullName}}</h5>
+          <p class="card-text">BACHELOR OF TECHNOLOGY VII SEMESTER(BTECH.VII SEM)</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">420 -- INSTITUTE OF ENGINEERING AND TECHNOLOGY,AYODHYA</li>
+          <li class="list-group-item">Roll No: {{loginUser.id}}</li>
+        </ul>
+      </div>
+
+
+  </div>
+  <div class="infrastructure">
+    <div class="buttons">
+      <button class="btnPersonal" (click)="Class()">Personal Details</button>
+      <button class="butn" (click)="lab()">Parent's</button>
+      <button class="butn" (click)="Excilence()">Address</button>
+    </div>
+    <hr>
+    <ng-container *ngIf="val1 == true" class="main1"><h5>
+       <div class="main2">
+        <ul class="details">
+          <li>Mobile No.:</li>
+          <li>DOB:</li>
+          <li>Category:</li>
+          <li>Aadhar No.:</li>
+          <li>Domicile:</li>
+          <li>Blood Group:</li>
+          <li>Nationality:</li>
+        </ul>
+        <ul class="datailsData">
+          <li>{{loginUser.phoneNumber}}</li>
+          <li>{{loginUser.dob |date}}</li>
+          <li>{{loginUser.category}}</li>
+          <li>{{loginUser.aadharNumber}}</li>
+          <li>UP</li>
+          <li>AB+</li>
+          <li>{{loginUser.nationality}}</li>
+        </ul>
+        <ul class="details">
+          <li>Email ID:</li>
+          <li>Gender:</li>
+          <li>Sub-Category:</li>
+          <li>Weightage:</li>
+          <li>Mother Tongue:</li>
+          <li>Religion:</li>
+        </ul>
+        <ul class="datailsData">
+          <li>{{loginUser.email}}</li>
+          <li>{{loginUser.gender}}</li>
+          <li>{{loginUser.gender}}</li>
+          <li>N/A</li>
+          <li>68Kg</li>
+          <li>Hindi</li>
+          <li>{{loginUser.religion}}</li>
+        </ul>
+       </div>
+    </h5></ng-container>
+    <ng-container *ngIf="val2==true" >
+      <div class="main2">
+        <ul class="details">
+          <li>Father's Name:</li>
+          <li>Mother's Name:</li>
+          <li>Parent's Income:</li>
+        </ul>
+        <ul class="datailsData">
+          <li>{{loginUser.fatherName}}</li>
+          <li>{{loginUser.motherName}}</li>
+          <li>240000</li>
+        </ul>
+     </div>
+
+    </ng-container>
+    <ng-container *ngIf="val3==true" >
+      <div class="main2">
+        <ul class="details">
+          <li>House No.:</li>
+          <li>Street/Village:</li>
+          <li>Post Office:</li>
+          <li>Pin Code:</li>
+          <li>District/City:</li>
+          <li>State:</li>
+        </ul>
+        <ul class="datailsData">
+          <li>{{loginUser.address}}</li>
+          <li>{{loginUser.address}}</li>
+          <li> {{loginUser.address}}</li>
+          <li>{{loginUser.pinCode}}</li>
+          <li>{{loginUser.city}}</li>
+          <li>{{loginUser.state}}</li>
+        </ul>
+     </div>
+    </ng-container>
+
+  </div>
+</div>
+<div class="parrent"  *ngIf="detail == true">
+  <div class="main">
+    <div class="logo"><img src="../assets/logo.png" alt=""></div>
+    <hr>
+    <h6>{{stdDetails.fullName}}</h6>
+    <hr>
+    <ul>
+      <li><span class="fa-solid fa-house"></span><a href="">Dash Board</a></li>
+      <li><span class="fa-solid fa-user"></span><a href="">My Profile</a></li>
+      <li><span class="fa-solid fa-book"></span><a href="payment">Admission Fee</a></li>
+      <li><span class="fa-solid fa-book"></span><a href="">Exam Form</a></li>
+      <li><span class="fa-solid fa-hotel"></span><a href="">Hostel</a></li>
+      <li><span class="fa-solid fa-right-to-bracket"></span><button class="" (click)="signOut()">Logout</button></li>
+    </ul>
+  </div>
+
+  <div>
+    <h3>My Profile</h3>
+
+    <div class="card" style="width: 18rem;">
+      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" class="card-img-top" alt="...">
+      <hr>
+      <div class="card-body">
+        <h5 class="card-title">{{stdDetails.fullName}}</h5>
+        <p class="card-text">BACHELOR OF TECHNOLOGY VII SEMESTER(BTECH.VII SEM)</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">420 -- INSTITUTE OF ENGINEERING AND TECHNOLOGY,AYODHYA</li>
+        <li class="list-group-item">Roll No: {{stdDetails.id}}</li>
+      </ul>
+    </div>
+
+
+</div>
+<div class="infrastructure">
+  <div class="buttons">
+    <button class="btnPersonal" (click)="Class()">Personal Details</button>
+    <button class="butn" (click)="lab()">Parent's</button>
+    <button class="butn" (click)="Excilence()">Address</button>
+  </div>
+  <hr>
+  <ng-container *ngIf="val1 == true" class="main1"><h5>
+     <div class="main2">
+      <ul class="details">
+        <li>Mobile No.:</li>
+        <li>DOB:</li>
+        <li>Category:</li>
+        <li>Aadhar No.:</li>
+        <li>Domicile:</li>
+        <li>Blood Group:</li>
+        <li>Nationality:</li>
+      </ul>
+      <ul class="datailsData">
+        <li>{{stdDetails.phoneNumber}}</li>
+        <li>{{stdDetails.dob |date}}</li>
+        <li>{{stdDetails.category}}</li>
+        <li>{{stdDetails.aadharNumber}}</li>
+        <li>UP</li>
+        <li>AB+</li>
+        <li>{{stdDetails.nationality}}</li>
+      </ul>
+      <ul class="details">
+        <li>Email ID:</li>
+        <li>Gender:</li>
+        <li>Sub-Category:</li>
+        <li>Weightage:</li>
+        <li>Mother Tongue:</li>
+        <li>Religion:</li>
+      </ul>
+      <ul class="datailsData">
+        <li>{{stdDetails.email}}</li>
+        <li>{{stdDetails.gender}}</li>
+        <li>{{stdDetails.gender}}</li>
+        <li>N/A</li>
+        <li>68Kg</li>
+        <li>Hindi</li>
+        <li>{{stdDetails.religion}}</li>
+      </ul>
+     </div>
+  </h5></ng-container>
+  <ng-container *ngIf="val2==true" >
+    <div class="main2">
+      <ul class="details">
+        <li>Father's Name:</li>
+        <li>Mother's Name:</li>
+        <li>Parent's Income:</li>
+      </ul>
+      <ul class="datailsData">
+        <li>{{stdDetails.fatherName}}</li>
+        <li>{{stdDetails.motherName}}</li>
+        <li>240000</li>
+      </ul>
+   </div>
+
+  </ng-container>
+  <ng-container *ngIf="val3==true" >
+    <div class="main2">
+      <ul class="details">
+        <li>House No.:</li>
+        <li>Street/Village:</li>
+        <li>Post Office:</li>
+        <li>Pin Code:</li>
+        <li>District/City:</li>
+        <li>State:</li>
+      </ul>
+      <ul class="datailsData">
+        <li>{{stdDetails.address}}</li>
+        <li>{{stdDetails.address}}</li>
+        <li> {{stdDetails.address}}</li>
+        <li>{{stdDetails.pinCode}}</li>
+        <li>{{stdDetails.city}}</li>
+        <li>{{stdDetails.state}}</li>
+      </ul>
+   </div>
+  </ng-container>
+
+</div>
+</div>
+
+<app-footer></app-footer>

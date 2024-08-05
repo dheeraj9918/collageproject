@@ -1,0 +1,27 @@
+
+<app-header></app-header>
+<div class="main">
+  <h4>Notification List</h4>
+  <div class="list">
+    <ul class="scrolling-list" *ngFor="let n of notice.reverse()">
+      <li><a href="https://localhost:44391/api/Files/download/{{n.id}}">{{n.fileName}}</a>
+        <button  class="btn btn-danger delte" (click)="delete(n.id)"> <h6>Delete</h6></button></li>
+    </ul>
+  </div>
+<br>
+<hr>
+<div class="form">
+  <form  class="row g-3" (ngSubmit)="submitForm()" #form="ngForm">
+    <div class="col-auto mb-3">
+      <label for="formFile" class="form-label">Upload New Notice</label>
+      <div class="input-group">
+        <input class="form-control" type="file" id="formFile" #fileInput (change)="onFileSelected($event)" name="file">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+</div>
+
+<app-footer></app-footer>

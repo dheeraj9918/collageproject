@@ -1,0 +1,169 @@
+.mechanical{
+  padding-top: 8vh;
+  margin: 0 7vh 7vh;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.allAbout {
+  margin-top: 7vh;
+}
+
+.parrent {
+  display: flex;
+  gap: 25px;
+}
+
+.header1 {
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+
+.containt {
+  margin-top: 4vh;
+  margin-right: 8vh;
+  margin-left: 2vh;
+  height: 100%;
+  width: 100%;
+  margin-bottom: 20vh;
+}
+
+p {
+  margin-top: 8vh;
+  margin-bottom: 5vh;
+  text-align: justify !important;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+img {
+  width: 10rem;
+  margin-left: 3rem;
+  margin-top: 1rem;
+  border-radius: 1rem;
+}
+.card{
+  margin:10px 0px;
+}
+.card-body {
+  text-align: center;
+}
+
+
+h5 {
+  margin-top: 1rem;
+  font-weight: 600;
+  color: #302f2f;
+  font-size: medium;
+}
+
+h6 {
+  font-weight: 400;
+}
+
+.line1, .line2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+}
+
+.paritosh img {
+  height: 14rem;
+}
+
+/* Media Queries for responsiveness */
+
+@media (max-width: 1200px) {
+  .it {
+    padding-top: 20vh;
+    margin: 0 5vh 5vh;
+  }
+
+  .containt {
+    margin-right: 4vh;
+    margin-left: 1vh;
+    margin-bottom: 10vh;
+  }
+
+  p {
+    margin-top: 6vh;
+    margin-bottom: 4vh;
+    font-size: 13px;
+    line-height: 22px;
+  }
+
+  img {
+    width: 8rem;
+    margin-left: 2rem;
+  }
+
+  .paritosh img {
+    height: 12rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .it {
+    padding-top: 15vh;
+    margin: 0 3vh 3vh;
+  }
+
+  .containt {
+    text-align: center;
+    margin-right: 2vh;
+    margin-left: 1vh;
+    margin-bottom: 5vh;
+  }
+
+  p {
+    margin-top: 4vh;
+    margin-bottom: 3vh;
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  img {
+    width: 6rem;
+    margin-left: 1rem;
+  }
+
+  .paritosh img {
+    height: 10rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .parrent{
+    flex-wrap: wrap;
+  }
+  .it {
+    padding-top: 10vh;
+    margin: 0 2vh 2vh;
+  }
+
+  .containt {
+    margin-right: 1vh;
+    margin-left: 0.5vh;
+    margin-bottom: 2vh;
+  }
+
+  p {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    font-size: 11px;
+    line-height: 18px;
+  }
+
+  img {
+    width: 178px;
+    margin-left: 2.5rem;
+  }
+
+  .paritosh img {
+    height: 10rem;
+  }
+  .line1 ,.line2{
+    padding-left: 42px;
+  }
+}

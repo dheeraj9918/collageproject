@@ -1,0 +1,22 @@
+section{
+  padding-top: 15vh;
+}
+.col{
+  margin-right: 25%;
+    margin-left: 25%;
+}
+.main{
+  width: 100%;
+}
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+  font-size: 1rem;
+  line-height: 2.15;
+  padding-left: .75em;
+  padding-right: .75em;
+  }
+  .card-registration .select-arrow {
+  top: 13px;
+  }
+  .invalid-border {
+    border: 1px solid red;
+  }

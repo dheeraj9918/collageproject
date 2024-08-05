@@ -1,0 +1,60 @@
+/* Footer */
+footer {
+  background-color: #f8f9fa; /* Light background color */
+  color: #6c757d; /* Muted text color */
+}
+
+footer .section-social-media {
+  background-color: lightblue;
+}
+
+footer .section-social-media .social-icon {
+  margin-right: 15px;
+  color: #6c757d;
+}
+
+footer .container {
+  padding: 40px;
+}
+
+footer .footer-heading {
+  color: #343a40; /* Dark color for headings */
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+footer .footer-link {
+  color: #6c757d;
+  text-decoration: none;
+}
+
+footer .footer-link:hover {
+  color: #343a40;
+  text-decoration: underline;
+}
+
+footer .map iframe {
+  width: 100%;
+  height: 300px;
+  border: 0;
+}
+
+@media (max-width: 767.98px) {
+  footer .section-social-media {
+    justify-content: center;
+  }
+
+  footer .footer-column {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .map iframe{
+    width:auto;
+    height: 45px;
+  }
+  img{
+    margin-left: 2vh;
+  }
+}

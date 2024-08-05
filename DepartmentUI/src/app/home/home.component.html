@@ -1,0 +1,39 @@
+<app-header></app-header>
+<div class="parent">
+  <div class="parrent">
+    <div class="main">
+      <div class="body">
+        <div class="btech"><h2>B.TECH</h2></div>
+        <hr class="hr1">
+        <div class="intake"><h4>INTAKE</h4>
+            <h5>75+</h5>
+        </div>
+      </div>
+      <div class="overview "><a href="#" class="nav-link">Overview</a>
+      </div>
+      <hr>
+      <div style="margin-top: 2em;">
+        <h4  class="board">Notice Board</h4>
+        <div class="notice">
+
+          <ul class="scrolling-list" *ngFor="let n of notice.reverse()">
+              <li><a href="https://localhost:44391/api/Files/download/{{n.id}}">{{n.fileName}}</a>
+          </ul>
+      </div>
+
+      </div>
+    </div>
+    <div class="containt">
+      <h3  class="header1">Mechanical Engineering</h3>
+      <div class="allAbout">
+        <p>
+          In this age of technological advancement, the mastery of Engineering principles is the cornerstone of success for nations and corporations alike. Effective management and application of these principles are crucial to thriving in today's competitively evolving landscape. Our course in Mechanical Engineering equips students with the knowledge and skills necessary to leave a lasting impact on societal development. By integrating into the curriculum cutting-edge topics like Robotics, Advanced Manufacturing Techniques, and Renewable Energy Systems, we prepare our pupils to drive innovation and contribute significantly to the Engineering field and beyond.
+        </p>
+        <img src="./assets/itHome.jpg" alt="">
+      </div>
+      <button class="btn btun" (click)="viewMore()">View More</button>
+    </div>
+  </div>
+</div>
+<button class="chat-bot-btn" (click)="chat()">IET Bot</button>
+<app-footer></app-footer>

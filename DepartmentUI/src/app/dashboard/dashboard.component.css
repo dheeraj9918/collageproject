@@ -1,0 +1,228 @@
+.parrent{
+  display: flex;
+}
+.main{
+  /* border: 1px solid red; */
+  width: 14em;
+  height: 100vh;
+  background: rgb(52,58,64);
+  color: rgb(228, 223, 223);
+}
+
+.buttons{
+  display: flex;
+  flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 20px;
+}
+
+.logo img{
+  background-color: rgb(228, 223, 223);
+  width: 14em;
+}
+/* dasboard main */
+.card{
+  margin-left: 1rem;
+    margin-top: 2rem;
+}
+.card-img-top{
+  width: 6em;
+  margin-left: 6rem;
+  margin-top: 1rem;
+
+}
+.card-title{
+  text-align: center;
+}
+.card-text ,.list-group-item{
+  text-align: center;
+}
+
+h6{
+  margin-left: 3rem;
+}
+
+ul{
+  margin: 1rem;
+}
+ul li{
+  list-style: none;
+  padding-top: 1rem;
+}
+ul li a{
+  text-decoration: none;
+  color: rgb(228, 223, 223);
+}
+
+.sht{
+  font-size: 12px;
+  margin: 0px 0px 7px -23px;
+}
+.hm{
+  font-size: 12px;
+  margin: 0px 0px 7px -7px;
+}
+.sb{
+  font-size: 12px;
+  margin: 2px 0px 7px -7px;
+}
+.lb{
+  font-size: 12px;
+  margin: 0px 0px 7px -7px;
+}
+
+/* Card Details */
+.infrastructure{
+  height: auto;
+  margin: 10vh 5vh;
+  background-color: white;
+  box-shadow: 5px 5px 10px rgba(198, 92, 92, 0.3);
+  border-radius: 2vh;
+  width: 50em;
+  margin-top: 4rem;
+}
+
+.main2{
+  display: flex;
+}
+
+.buttons{
+  text-align: center;
+}
+
+.butn{
+  background-color: #FFF78A;
+  border: 1px solid black;
+  border-radius: 9px;
+  width: 17vh;
+  height: 7vh;
+  margin: 2vh;
+}
+
+.butn:hover{
+  color: #F79432;
+  background-color: white;
+}
+
+.btnPersonal{
+  background-color: #FFF78A;
+  border: 1px solid black;
+  border-radius: 9px;
+  width: 8rem;
+  height: 7vh;
+  margin: 2vh;
+}
+.btnPersonal:hover{
+  color: #F79432;
+  background-color: white;
+}
+
+.details li{
+  font-size: small;
+  font-weight: 700;
+}
+
+.datailsData li{
+  font-size: small;
+  font-weight: 500;
+}
+
+
+.tab{
+  padding-top: 8rem;
+  padding-bottom: 3rem;
+}
+
+section{
+  padding-top: 15vh;
+}
+
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+  font-size: 1rem;
+  line-height: 2.15;
+  padding-left: .75em;
+  padding-right: .75em;
+  }
+  .card-registration .select-arrow {
+  top: 13px;
+  }
+  .invalid-border {
+    border: 1px solid red;
+  }
+
+  .btn-danger{
+
+  }
+  .btun{
+    background-color: #f0a65b;
+    color: #edf2f4;
+  }
+
+
+  /* Default styles */
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+/* Media query for smaller screens (e.g., mobile devices) */
+@media (max-width: 768px) {
+  .table {
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+  }
+
+  .table thead {
+    display: none; /* Hide the table header */
+  }
+
+  .table tbody, .table tr, .table td {
+    display: block;
+    width: 100%;
+  }
+
+  .table td {
+    text-align: left;
+    padding: .5rem;
+    vertical-align: middle;
+  }
+
+  .table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+  }
+  .btn{
+    width: auto;
+    height: auto;
+    margin-top: 10px;
+    font-size: small;
+    font-weight: 200;
+  }
+
+}
+
+section{
+  padding-top: 5vh;
+}
+.col{
+  margin-right: 25%;
+    margin-left: 25%;
+}
+.main{
+  width: 100%;
+}
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+  font-size: 1rem;
+  line-height: 2.15;
+  padding-left: .75em;
+  padding-right: .75em;
+  }
+  .card-registration .select-arrow {
+  top: 13px;
+  }
+  .invalid-border {
+    border: 1px solid red;
+  }

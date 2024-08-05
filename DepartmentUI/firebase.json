@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "site": "it-deparment-rmlau",
+    "public": "dist/department-ui",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

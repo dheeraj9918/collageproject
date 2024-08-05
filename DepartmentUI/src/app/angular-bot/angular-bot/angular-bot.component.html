@@ -1,0 +1,18 @@
+<app-header></app-header>
+<div class="parrent">
+<ng-container *ngFor="let message of messages">
+  <div class="message" [ngClass]="{from: message.author === 'bot',to: message.author === 'user'}">
+    {{ message.content }}
+  </div>
+</ng-container>
+<div class="bot">
+  <label *ngIf="messages.length == 0; else dialogInfo" for="nameField">Chat Bot</label>
+  <input [(ngModel)]="value" (keyup.enter)="sendMessage()" type="text" class="form-control" />
+  <button (click)="sendMessage()" class="btn btn-primary">Send</button>
+  <ng-template #dialogInfo>
+    <span [className]="'float-right'">Total messages: {{ messages.length }}</span>
+  </ng-template>
+</div>
+
+</div>
+<app-footer></app-footer>

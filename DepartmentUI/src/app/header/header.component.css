@@ -1,0 +1,19 @@
+.navbar-custom {
+  background-color: lightsalmon;
+}
+.navbar-brand img {
+  width: 90px;
+  padding: 10px;
+}
+.college-name h3, .college-name h4, .college-name h5 {
+  color: white;
+}
+.dropdown-menu {
+  background-color: orange;
+}
+.dropdown-item {
+  color: white;
+}
+.dropdown-item:hover {
+  background-color: darkorange;
+}

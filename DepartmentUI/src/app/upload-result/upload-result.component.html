@@ -1,0 +1,138 @@
+<app-header></app-header>
+<form #myForm="ngForm" (ngSubmit)="onSubmit1()" >
+  <section class="h-100 ">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col">
+          <div class="card card-registration my-4">
+            <div class="row g-0">
+
+              <div class="col-xl-6 main">
+                <div class="card-body p-md-5 text-black">
+                  <h3 class="mb-5 text-uppercase">Add Results</h3>
+
+                  <div class="row">
+                      <div class="col-md-6 mb-4">
+                        <div class="form-outline" >
+                          <input type="text" id="form3Example1m" class="form-control form-control-lg" required name="signInModelId" placeholder="Roll No."
+                          [(ngModel)]="formData.signInModelId" #signInModelId="ngModel" [ngClass]="{'invalid-border': signInModelId.invalid && (signInModelId.dirty || signInModelId.touched)}"/>
+                          <div class="text-danger" *ngIf="signInModelId.invalid && (signInModelId.dirty || signInModelId.touched)">*RollNo Required</div>
+                        </div>
+                      </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type=number id="form3Example97" required #semster="ngModel" placeholder="semster" [ngClass]="{'invalid-border': semster.invalid && (semster.dirty || semster.touched)}"
+                        class="form-control form-control-lg" name="semster" [(ngModel)]="formData.semster"/>
+                        <div class="text-danger" *ngIf="semster.invalid && (semster.dirty || semster.touched)">*semster Required</div>
+
+                      </div>
+                    </div>
+                  </div>
+                 
+                 
+
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text" id="form3Example97" required #subject1="ngModel" placeholder="subject1" [ngClass]="{'invalid-border': subject1.invalid && (subject1.dirty || subject1.touched)}"
+                        class="form-control form-control-lg" name="subject1" [(ngModel)]="formData.subject1"/>
+                        <div class="text-danger" *ngIf="subject1.invalid && (subject1.dirty || subject1.touched)">*subject1 id Required</div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type=number id="form3Example97" required #optMarks1="ngModel" placeholder="Mark" [ngClass]="{'invalid-border': optMarks1.invalid && (optMarks1.dirty || optMarks1.touched)}"
+                        class="form-control form-control-lg" name="optMarks1" [(ngModel)]="formData.optMarks1"/>
+                        <div class="text-danger" *ngIf="optMarks1.invalid && (optMarks1.dirty || optMarks1.touched)">*optMarks1 Required</div>
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text" id="form3Example97" required #subject2="ngModel" placeholder="subject2" [ngClass]="{'invalid-border': subject2.invalid && (subject2.dirty || subject2.touched)}"
+                        class="form-control form-control-lg" name="subject2" [(ngModel)]="formData.subject2"/>
+                        <div class="text-danger" *ngIf="subject2.invalid && (subject2.dirty || subject2.touched)">*subject2 Required</div>
+
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type=number id="form3Example97" required #optMarks2="ngModel" placeholder="Mark" [ngClass]="{'invalid-border': optMarks2.invalid && (optMarks2.dirty || optMarks2.touched)}"
+                        class="form-control form-control-lg" name="optMarks2" [(ngModel)]="formData.optMarks2"/>
+                        <div class="text-danger" *ngIf="optMarks2.invalid && (optMarks2.dirty || optMarks2.touched)">*optMarks2 Required</div>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text" id="form3Example97" required #subject3="ngModel" placeholder="subject3" [ngClass]="{'invalid-border': subject3.invalid && (subject3.dirty || subject3.touched)}"
+                        class="form-control form-control-lg" name="subject3" [(ngModel)]="formData.subject3"/>
+                        <div class="text-danger" *ngIf="subject3.invalid && (subject3.dirty || subject3.touched)">*subject3 Required</div>
+
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type=number id="form3Example97" required #optMarks3="ngModel" placeholder="Mark" [ngClass]="{'invalid-border': optMarks3.invalid && (optMarks3.dirty || optMarks3.touched)}"
+                        class="form-control form-control-lg" name="optMarks3" [(ngModel)]="formData.optMarks3"/>
+                        <div class="text-danger" *ngIf="optMarks3.invalid && (optMarks3.dirty || optMarks3.touched)">*optMarks3 Required</div>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text" id="form3Example97" required #subject4="ngModel" placeholder="subject4" [ngClass]="{'invalid-border': subject4.invalid && (subject4.dirty || subject4.touched)}"
+                        class="form-control form-control-lg" name="subject4" [(ngModel)]="formData.subject4"/>
+                        <div class="text-danger" *ngIf="subject4.invalid && (subject4.dirty || subject4.touched)">*subject4 Required</div>
+
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type=number id="form3Example97" required #optMarks4="ngModel" placeholder="Mark" [ngClass]="{'invalid-border': optMarks4.invalid && (optMarks4.dirty || optMarks4.touched)}"
+                        class="form-control form-control-lg" name="optMarks4" [(ngModel)]="formData.optMarks4"/>
+                        <div class="text-danger" *ngIf="optMarks4.invalid && (optMarks4.dirty || optMarks4.touched)">*optMarks4 Required</div>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text" id="form3Example97" required #subject5="ngModel" placeholder="subject5" [ngClass]="{'invalid-border': subject5.invalid && (subject5.dirty || subject5.touched)}"
+                        class="form-control form-control-lg" name="subject5" [(ngModel)]="formData.subject5"/>
+                        <div class="text-danger" *ngIf="subject5.invalid && (subject5.dirty || subject5.touched)">*subject5 Required</div>
+
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type=number id="form3Example97" required #optMarks5="ngModel" placeholder="Mark" [ngClass]="{'invalid-border': optMarks5.invalid && (optMarks5.dirty || optMarks5.touched)}"
+                        class="form-control form-control-lg" name="optMarks5" [(ngModel)]="formData.optMarks5"/>
+                        <div class="text-danger" *ngIf="optMarks5.invalid && (optMarks5.dirty || optMarks5.touched)">*optMarks5 Required</div>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-end pt-3">
+                    <button type="button" class="btn btn-light btn-lg" (click)="reset()">Reset all</button>
+                    <button type="submit" class="btn btn-warning btn-lg ms-2" [disabled]="!myForm.valid">Upload</button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </form>
+<app-footer></app-footer>

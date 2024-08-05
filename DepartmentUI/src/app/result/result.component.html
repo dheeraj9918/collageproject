@@ -1,0 +1,78 @@
+<app-header></app-header>
+
+<div class="inp" *ngIf="search == true">
+  <h4 >Search Your Result By Roll Number</h4>
+  <br>
+  <form #myForm="ngForm" (ngSubmit)="onSubmit()" class="form">
+    <div class="input-group mb-3">
+
+      <input type="text" class="form-control" placeholder="Roll No" aria-label="Recipient's username" aria-describedby="basic-addon2" name="Id" [(ngModel)]="credential.Id">
+      <div class="input-group-append">
+        <button class="btn btn-secondary" type="submit" id="basic-addon2">Result</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+
+
+<div class="body" *ngIf="result == true">
+
+  <div class="main">
+      <h3>Provisional MarkSheet</h3>
+      <h3>IET RMLAU</h3>
+      <h2>Mechanical Engineering {{marksheet.semster}}th Semester</h2>
+      <div class="info">
+          <p>Program Roll:{{marksheet.signInModelId}} </p>
+          <!-- <p>Student's name: {{marksheet.fullName}}</p> -->
+          <p>Institute: IET RMLAU Ayodhya</p>
+      </div>
+      <table>
+          <tr>
+              <th>Sl</th>
+              <th>Exam Name</th>
+              <th>Obtained Marks</th>
+              <th>Total Marks</th>
+          </tr>
+          <tr >
+              <td>1</td>
+              <td>{{marksheet.subject1}}</td>
+              <td>{{marksheet.optMarks1}}</td>
+              <td>50</td>
+          </tr>
+          <tr >
+            <td>2</td>
+            <td>{{marksheet.subject2}}</td>
+            <td>{{marksheet.optMarks2}}</td>
+            <td>50</td>
+        </tr>
+        <tr >
+          <td>3</td>
+          <td>{{marksheet.subject3}}</td>
+          <td>{{marksheet.optMarks3}}</td>
+          <td>50</td>
+      </tr>
+      <tr >
+        <td>4</td>
+        <td>{{marksheet.subject4}}</td>
+        <td>{{marksheet.optMarks4}}</td>
+        <td>50</td>
+    </tr>
+    <tr >
+      <td>5</td>
+      <td>{{marksheet.subject5}}</td>
+      <td>{{marksheet.optMarks5}}</td>
+      <td>50</td>
+  </tr>
+  <br>
+  <div class="pb-4">
+    <span >Grand Total :</span>
+    <span class="fs-4">{{marksheet.optTotalMarks}}</span>
+  </div>
+
+      </table>
+  </div>
+</div>
+
+<app-footer></app-footer>

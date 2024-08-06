@@ -5,12 +5,12 @@
     {{ message.content }}
   </div>
 </ng-container>
-<div class="bot">
-  <label *ngIf="messages.length == 0; else dialogInfo" for="nameField">Chat Bot</label>
-  <input [(ngModel)]="value" (keyup.enter)="sendMessage()" type="text" class="form-control" />
-  <button (click)="sendMessage()" class="btn btn-primary">Send</button>
+<div style="display: flex; flex-direction: row; justify-content: center; align-items: center;" class="bot">
+  <label style="font-size: 20px; font-weight: bold; margin-right: 25px;" *ngIf="messages.length == 0; else dialogInfo" for="nameField">Chat Bot</label>
+  <input style="width: 400px; height: 50px; border-top-right-radius: 0; border-bottom-right-radius: 0;" [(ngModel)]="value" (keyup.enter)="sendMessage()" type="text" class="form-control" />
+  <button style="width: 150px; height: 50px; font-weight: bold; border-top-left-radius: 0; border-bottom-left-radius: 0;" (click)="sendMessage()" class="btn btn-primary">Send</button>
   <ng-template #dialogInfo>
-    <span [className]="'float-right'">Total messages: {{ messages.length }}</span>
+    <span style="margin-right: 20px; margin-left: 0;" [className]="'float-right'">Total messages: {{ messages.length }}</span>
   </ng-template>
 </div>
 

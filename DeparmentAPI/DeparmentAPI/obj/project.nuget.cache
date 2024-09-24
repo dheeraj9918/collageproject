@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Nlfi3GfY298=",
+  "dgSpecHash": "Wo0U5/ifs94=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Dheeraj Rauniyar\\OneDrive\\Desktop\\IT-Final-Project-master\\DeparmentAPI\\DeparmentAPI\\DeparmentAPI.csproj",
+  "projectFilePath": "C:\\Users\\Dheeraj Rauniyar\\OneDrive\\Desktop\\Mechannical Department-Final-Project-master\\DeparmentAPI\\DeparmentAPI\\DeparmentAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dheeraj Rauniyar\\.nuget\\packages\\automapper\\10.1.0\\automapper.10.1.0.nupkg.sha512",
     "C:\\Users\\Dheeraj Rauniyar\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.0\\automapper.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",

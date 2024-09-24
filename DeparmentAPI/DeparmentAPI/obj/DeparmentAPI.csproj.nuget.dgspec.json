@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dheeraj Rauniyar\\OneDrive\\Desktop\\IT-Final-Project-master\\DeparmentAPI\\DeparmentAPI\\DeparmentAPI.csproj": {}
+    "C:\\Users\\Dheeraj Rauniyar\\OneDrive\\Desktop\\Mechannical Department-Final-Project-master\\DeparmentAPI\\DeparmentAPI\\DeparmentAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dheeraj Rauniyar\\OneDrive\\Desktop\\IT-Final-Project-master\\DeparmentAPI\\DeparmentAPI\\DeparmentAPI.csproj": {
+    "C:\\Users\\Dheeraj Rauniyar\\OneDrive\\Desktop\\Mechannical Department-Final-Project-master\\DeparmentAPI\\DeparmentAPI\\DeparmentAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dheeraj Rauniyar\\OneDrive\\Desktop\\IT-Final-Project-master\\DeparmentAPI\\DeparmentAPI\\DeparmentAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Dheeraj Rauniyar\\OneDrive\\Desktop\\Mechannical Department-Final-Project-master\\DeparmentAPI\\DeparmentAPI\\DeparmentAPI.csproj",
         "projectName": "DeparmentAPI",
-        "projectPath": "C:\\Users\\Dheeraj Rauniyar\\OneDrive\\Desktop\\IT-Final-Project-master\\DeparmentAPI\\DeparmentAPI\\DeparmentAPI.csproj",
+        "projectPath": "C:\\Users\\Dheeraj Rauniyar\\OneDrive\\Desktop\\Mechannical Department-Final-Project-master\\DeparmentAPI\\DeparmentAPI\\DeparmentAPI.csproj",
         "packagesPath": "C:\\Users\\Dheeraj Rauniyar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dheeraj Rauniyar\\OneDrive\\Desktop\\IT-Final-Project-master\\DeparmentAPI\\DeparmentAPI\\obj\\",
+        "outputPath": "C:\\Users\\Dheeraj Rauniyar\\OneDrive\\Desktop\\Mechannical Department-Final-Project-master\\DeparmentAPI\\DeparmentAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Dheeraj Rauniyar\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -106,7 +106,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
